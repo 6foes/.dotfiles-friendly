@@ -90,4 +90,13 @@ M.generate_anim_folder = function(name)
 	return M.get_conf_folder() .. '\\wallpapers\\' .. name .. '.gif'
 end
 
+function M.map(list, func)
+	local mapped = {}
+	for i, v in ipairs(list) do
+	   mapped[i] = func(v)
+	end
+ 
+	return mapped
+ end
+
 return M
