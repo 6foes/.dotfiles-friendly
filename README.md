@@ -33,3 +33,6 @@ https://github.com/neovim/neovim/blob/master/INSTALL.md
 ### system
 1. add path to Environment variables (google it!)
 %USERPROFILE%\.windows-cmds-shortcuts
+2. you can **pin** shortcuts, cmds to start
+    open run and add below text and then enter
+    %USERPROFILE%\.windows-cmds-shortcuts
