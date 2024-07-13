@@ -1,17 +1,25 @@
 # dotfiles
 A friendly sharable dotfiles
+## what will be configured
+- wezterm - a gpu enabled terminal
+- neovim - a advanced editor (vi -> vim -> neovim)
+- windows shortcuts and commands
 
-## windows OS
-### wezterm - a gpu enabled terminal
+# Note - please go by steps
+
+
+# STEP 1
+## windows OS [MANUALLY to do]
+### wezterm
 1. Download and install
 https://wezfurlong.org/wezterm/installation.html
 
-### neovim - an editor
+### neovim
 1. Download and install
 https://github.com/neovim/neovim/blob/master/INSTALL.md
 
 
-
+# STEP 2
 ## setup for all (windows, linux, MacOS)
 1. Open git-bash
 2. run below script from <THIS-FOLDER> as it is
@@ -19,3 +27,9 @@ https://github.com/neovim/neovim/blob/master/INSTALL.md
         or
     sh ./setup.sh
 
+
+# STEP 3
+## windows OS [MANUALLY to do]
+### system
+1. add path to Environment variables (google it!)
+%USERPROFILE%\.windows-cmds-shortcuts
