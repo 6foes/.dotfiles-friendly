@@ -68,14 +68,9 @@ config.font_size =  12
 config.line_height = 1.1
 config.font = wezterm.font_with_fallback({
 		"JetBrains Mono",
-        "SpaceMono Nerd Font",
-		-- "CommitMono",
-		-- "Monaspace Argon",
-		-- "Monaspace Krypton",
-		-- "Monaspace Neon",
-		-- "Monaspace Radon",
-		-- "Monaspace Xenon",
-		{ family = "Symbols Nerd Font Mono" },
+		 "SpaceMono Nerd Font",
+		{ family = "Symbols Nerd Font Mono", scale = 0.9 },
+       
 })
 
 config.color_scheme = h.get_color_scheme()
@@ -223,6 +218,7 @@ wezterm.on('toggle-backgrounds', function(window, pane)
 	window:set_config_overrides(overrides)
 end)
 
+config.use_dead_keys = false
 config.disable_default_key_bindings = true
 config.keys = {
 	{
