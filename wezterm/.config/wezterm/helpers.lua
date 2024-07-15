@@ -1,16 +1,29 @@
 local wezterm = require("wezterm")
 local M = {}
 
+
 local appearance = wezterm.gui.get_appearance()
+local window_seperator = true
+if os.getenv("HOME") then
+    window_seperator = false
+end
 
 M.is_dark = function()
 	return appearance:find("Dark")
 end
 
 M.get_conf_folder = function()
-	local home = os.getenv("HOME") or os.getenv("USERPROFILE")
-	local wezterm_conf_folder = "\\.config\\wezterm"
-	return home .. wezterm_conf_folder
+	if not window_seperator then
+		return os.getenv("HOME") .. "/.config/wezterm"
+	end
+	return os.getenv("USERPROFILE") .. "\\.config\\wezterm"
+end
+
+M.get_wallpaper_random_blob = function()
+	if not window_seperator then
+		return M.get_conf_folder() .. "/wallpapersforrandom/**"
+	end
+	return M.get_conf_folder() .. "\\wallpapersforrandom\\**"
 end
 
 M.get_random_entry = function(tbl)
@@ -82,12 +95,30 @@ end
 
 
 M.generate_parallax_folder = function(folder)
+	if not window_seperator then
+		folder =  "/" .. folder
+		return M.get_conf_folder() .. '/parallax/' .. folder .. "/"
+	end
+	
 	folder =  "\\" .. folder
-	return M.get_conf_folder() .. '\\parallax\\' .. folder .. '\\'
+	return M.get_conf_folder() .. '\\parallax\\' .. folder .. "\\"
 end
 
 M.generate_anim_folder = function(name)
+	if not window_seperator then
+		return M.get_conf_folder() .. '/wallpapers/' .. name .. '.gif'
+	end
+
 	return M.get_conf_folder() .. '\\wallpapers\\' .. name .. '.gif'
 end
+
+function M.map(list, func)
+	local mapped = {}
+	for i, v in ipairs(list) do
+	   mapped[i] = func(v)
+	end
+ 
+	return mapped
+ end
 
 return M
