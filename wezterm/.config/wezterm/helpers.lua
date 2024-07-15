@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 local M = {}
 
+
 local appearance = wezterm.gui.get_appearance()
 
 M.is_dark = function()
@@ -8,9 +9,17 @@ M.is_dark = function()
 end
 
 M.get_conf_folder = function()
-	local home = os.getenv("HOME") or os.getenv("USERPROFILE")
-	local wezterm_conf_folder = "\\.config\\wezterm"
-	return home .. wezterm_conf_folder
+	if not os.getenv("HOME") == nil then
+		return os.getenv("HOME") .. "/.config/wezterm"
+	end
+	return os.getenv("USERPROFILE") .. "\\.config\\wezterm"
+end
+
+M.get_wallpaper_random_blob = function()
+	if not os.getenv("HOME") == nil then
+		return M.get_conf_folder() .. "/wallpapersforrandom/**"
+	end
+	return M.get_conf_folder() .. "\\wallpapersforrandom\\**"
 end
 
 M.get_random_entry = function(tbl)
@@ -82,11 +91,20 @@ end
 
 
 M.generate_parallax_folder = function(folder)
+	if not os.getenv("HOME") == nil then
+		folder =  "/" .. folder
+		return M.get_conf_folder() .. '/parallax/' .. folder .. "/"
+	end
+	
 	folder =  "\\" .. folder
-	return M.get_conf_folder() .. '\\parallax\\' .. folder .. '\\'
+	return M.get_conf_folder() .. '\\parallax\\' .. folder .. "\\"
 end
 
 M.generate_anim_folder = function(name)
+	if not os.getenv("HOME") == nil then
+		return M.get_conf_folder() .. '/wallpapers/' .. name .. '.gif'
+	end
+
 	return M.get_conf_folder() .. '\\wallpapers\\' .. name .. '.gif'
 end
 

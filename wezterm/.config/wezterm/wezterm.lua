@@ -17,11 +17,10 @@ local h = require("helpers")
 local parallax = require("parallax")
 
 -- for random
-local wallpapers_random_blob = h.get_conf_folder() .. "\\wallpapersforrandom\\" .. "**"
+local wallpapers_random_blob = h.get_wallpaper_random_blob()
 
 local dark_opacity = 0.75
 local light_opacity = 0.8
-
 
 local config = {}
 
