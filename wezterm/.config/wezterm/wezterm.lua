@@ -210,6 +210,9 @@ end
 
 local counter = false
 wezterm.on('toggle-backgrounds', function(window, pane)
+    -- if os.getenv("HOME") then
+    -- window:toast_notification('wezterm', 'configuration reloaded!', nil, 4000)
+    -- end
 	wezterm.log_info("name", name)
 	wezterm.log_info("value", value)
 	local overrides = window:get_config_overrides() or {}

@@ -3,20 +3,24 @@ local M = {}
 
 
 local appearance = wezterm.gui.get_appearance()
+local window_seperator = true
+if os.getenv("HOME") then
+    window_seperator = false
+end
 
 M.is_dark = function()
 	return appearance:find("Dark")
 end
 
 M.get_conf_folder = function()
-	if not os.getenv("HOME") == nil then
+	if not window_seperator then
 		return os.getenv("HOME") .. "/.config/wezterm"
 	end
 	return os.getenv("USERPROFILE") .. "\\.config\\wezterm"
 end
 
 M.get_wallpaper_random_blob = function()
-	if not os.getenv("HOME") == nil then
+	if not window_seperator then
 		return M.get_conf_folder() .. "/wallpapersforrandom/**"
 	end
 	return M.get_conf_folder() .. "\\wallpapersforrandom\\**"
@@ -91,7 +95,7 @@ end
 
 
 M.generate_parallax_folder = function(folder)
-	if not os.getenv("HOME") == nil then
+	if not window_seperator then
 		folder =  "/" .. folder
 		return M.get_conf_folder() .. '/parallax/' .. folder .. "/"
 	end
@@ -101,7 +105,7 @@ M.generate_parallax_folder = function(folder)
 end
 
 M.generate_anim_folder = function(name)
-	if not os.getenv("HOME") == nil then
+	if not window_seperator then
 		return M.get_conf_folder() .. '/wallpapers/' .. name .. '.gif'
 	end
 
