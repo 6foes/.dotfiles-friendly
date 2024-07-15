@@ -23,16 +23,16 @@ https://github.com/neovim/neovim/blob/master/INSTALL.md
 ## setup for all (windows, linux, MacOS)
 1. Open git-bash
 2. run below script from <THIS-FOLDER> as it is
-    ./setup.sh
+    ./pde-windows.sh
         or
-    sh ./setup.sh
+    sh ./pde-windows.sh
 
 
 # STEP 3
 ## windows OS [MANUALLY to do]
 ### system
 1. add path to Environment variables (google it!)
-%USERPROFILE%\.windows-cmds-shortcuts
+%USERPROFILE%\.shortcuts
 2. you can **pin** shortcuts, cmds to start
     open run and add below text and then enter
-    %USERPROFILE%\.windows-cmds-shortcuts
+    %USERPROFILE%\.shortcuts

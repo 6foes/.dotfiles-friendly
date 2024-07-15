@@ -16,21 +16,21 @@ if [ ! -d $HOME/.config/wezterm ]; then
 else
     echo " wezterm | $HOME/.config/wezterm exists!"
 fi
-cp -r .config/wezterm $HOME/.config/
+cp -r wezterm/.config/wezterm $HOME/.config/
 echo "....... wezterm | ok ......."
 
 echo "....... windows portables | ok ......."
 
 echo ""
 echo "....... windows cmd,shortcuts | configuring ......."
-if [ ! -d $HOME/.windows-cmds-shortcuts ]; then
-    mkdir $HOME/.windows-cmds-shortcuts
-    echo " wezterm | $HOME/.windows-cmds-shortcuts folder created"
+if [ ! -d $HOME/.shortcuts ]; then
+    mkdir $HOME/.shortcuts
+    echo " wezterm | $HOME/.shortcuts folder created"
 else
-    echo " wezterm | $HOME/.windows-cmds-shortcuts exists!"
+    echo " wezterm | $HOME/.shortcuts exists!"
 fi
 
-cp -r .windows-cmds-shortcuts/ $HOME
+cp -r windows-cmds-shortcuts/.shortcuts/* $HOME/.shortcuts/
 echo "....... windows cmd,shortcuts | ok ......."
 
 
