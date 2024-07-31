@@ -36,3 +36,10 @@ https://github.com/neovim/neovim/blob/master/INSTALL.md
 2. you can **pin** shortcuts, cmds to start
     open run and add below text and then enter
     %USERPROFILE%\.shortcuts
+
+# STEP 4
+1. go to directory
+    ~/<this repo>/fonts/
+*or* download from urls
+    https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SpaceMono/Regular/SpaceMonoNerdFont-Regular.ttf
+2. install by double clicking each
